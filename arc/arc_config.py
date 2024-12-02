@@ -5,4 +5,3 @@ DATA_DIRS = {
     'cdf': os.path.join(BASE_DIR, 'data', 'CDF'),
     'cluster': os.path.join(BASE_DIR, 'data', 'cluster'),
 }
-
