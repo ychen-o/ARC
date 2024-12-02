@@ -8,7 +8,7 @@ DATA_DIRS = {
 }
 
 # Precomputed to estimate end-to-end overhead
-TIME_CONFIG = { 
+TIME_CONFIG = {
     "oracle_time": {
         'amsterdam': 0.0860, 'venice-rialto': 0.0897, 'venice-grand-canal': 0.0874,
         'taipei-hires': 0.0878, 'jackson-town-square': 0.0711
@@ -25,5 +25,8 @@ TIME_CONFIG = {
         'amsterdam': 30.6029, 'venice-rialto': 22.4119, 'venice-grand-canal': 34.5492,
         'taipei-hires': 32.2784, 'jackson-town-square': 25.1041
     },
-      
+
 }
+
+Quantile_dist = {'jackson-town-square': {'P2.5': 4, 'P5': 3, 'P10': 3, 'P15': 2, 'P20': 2, 'P25': 2}, 'amsterdam': {'P2.5': 3, 'P5': 3, 'P10': 3, 'P15': 2, 'P20': 2, 'P25': 2}, 'taipei-hires': {'P2.5': 12, 'P5': 11,
+                                                                                                                                                                                                  'P10': 10, 'P15': 9, 'P20': 8, 'P25': 8}, 'venice-rialto': {'P2.5': 6, 'P5': 6, 'P10': 5, 'P15': 5, 'P20': 4, 'P25': 4}, 'venice-grand-canal': {'P2.5': 11, 'P5': 11, 'P10': 10, 'P15': 9, 'P20': 9, 'P25': 9}}
