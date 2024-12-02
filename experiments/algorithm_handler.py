@@ -1,11 +1,13 @@
+import sys
+sys.path.append('../arc')
+
 from cmdn_aqp import uniform, importance
 from supg import run_rt, run_pt
 from tools import findCandClips
 from arc import arc
 import numpy as np
 from metrics import calculate_time, calculate_precision_recall_iou
-import sys
-sys.path.append('../arc')
+
 
 
 def oracle_only(oracle_score, op, tau):
