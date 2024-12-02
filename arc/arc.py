@@ -127,7 +127,7 @@ def arc(proxy, oracle, proxy_score, oracle_score, B, op, constant, tau, confiden
         tau_cand_clips, IOUThreshold, probabilities, clusters, cluster_boundaries)
     progress_bar(o_b + 1, B, tau_rel_confidence, tau_confidence, interval_o)
     end_t = time.time()
-
+    print("\n\n\nARC has terminated.\n")
     return {
         'cand_clips': tau_cand_clips, 'B': o_b + 1, 'ps_t': end_t - start_t - lb_t, 'lb_t': lb_t, 'ce_t': ce_t, 'tc_enabled': tc_enabled
     }
