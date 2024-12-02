@@ -13,7 +13,7 @@ def progress_bar(current, total, tau_rel_confidence, tau_confidence, interval_o,
     arrow = int(fraction * bar_length - 1) * '-' + '>'
     padding = int(bar_length - len(arrow)) * ' '
     sys.stdout.write(
-        f"\r sample/budget: [{''.join([arrow, padding])}] {current}/{total} ({fraction:.2%}) tau_rel_confidence: {tau_rel_confidence:.2f}, tau_confidence: {tau_confidence:.2f}, {interval_o}")
+        f"\rsample/budget: [{''.join([arrow, padding])}] {current}/{total} ({fraction:.2%}) tau_rel_confidence: {tau_rel_confidence:.2f}, tau_confidence: {tau_confidence:.2f}, {interval_o}")
     sys.stdout.flush()
 
 
@@ -129,5 +129,5 @@ def arc(proxy, oracle, proxy_score, oracle_score, B, op, constant, tau, confiden
     end_t = time.time()
 
     return {
-        'cand_clips': tau_cand_clips, 'B': o_b + 1, 'ps_t': end_t - start_t - lb_t, 'lb_t': lb_t, 'ce_t': ce_t, 's_t': end_t - start_t - lb_t-est_conf, 'tc_enabled': tc_enabled
+        'cand_clips': tau_cand_clips, 'B': o_b + 1, 'ps_t': end_t - start_t - lb_t, 'lb_t': lb_t, 'ce_t': ce_t, 'tc_enabled': tc_enabled
     }
