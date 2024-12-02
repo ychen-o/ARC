@@ -52,9 +52,13 @@ def overall_dataset(params, algorithms):
             results[V][name]['mIoU'].append(averageIOU)
             results[V][name]['Recall'].append(recall)
             results[V][name]['Precision'].append(precision)
-    old_results = load_results('overall_dataset.pkl')
-    updated_results = update_results(old_results, results)
-    save_results(updated_results, 'overall_dataset.pkl')
+    file_path = 'overall_dataset.pkl'
+    if os.path.exists(file_path):
+        old_results = load_results(file_path)
+        updated_results = update_results(old_results, results)
+    else:
+        updated_results = results
+    save_results(updated_results, file_path)
     print(updated_results)
 
 
@@ -82,10 +86,13 @@ def impact(param_name, param_values, params, algorithms):
             results[val][V]['mIoU'].append(averageIOU)
             results[val][V]['Recall'].append(recall)
             results[val][V]['Precision'].append(precision)
-    old_results = load_results(f'{param_name}.pkl')
-    updated_results = update_results(old_results, results)
-
-    save_results(updated_results, f'{param_name}.pkl')
+    file_path = f'{param_name}.pkl'
+    if os.path.exists(file_path):
+        old_results = load_results(file_path)
+        updated_results = update_results(old_results, results)
+    else:
+        updated_results = results
+    save_results(updated_results, file_path)
     print(updated_results)
 
 
@@ -115,10 +122,13 @@ def impact_opc(param_name, param_values, params, algorithms):
             results[val[1:]][V]['mIoU'].append(averageIOU)
             results[val[1:]][V]['Recall'].append(recall)
             results[val[1:]][V]['Precision'].append(precision)
-    old_results = load_results(f'{param_name}.pkl')
-    updated_results = update_results(old_results, results)
-
-    save_results(updated_results, f'{param_name}.pkl')
+    file_path = f'{param_name}.pkl'
+    if os.path.exists(file_path):
+        old_results = load_results(file_path)
+        updated_results = update_results(old_results, results)
+    else:
+        updated_results = results
+    save_results(updated_results, file_path)
     print(updated_results)
 
 
