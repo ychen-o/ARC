@@ -13,7 +13,7 @@ def progress_bar(current, total, tau_rel_confidence, tau_confidence, interval_o,
     arrow = int(fraction * bar_length - 1) * '-' + '>'
     padding = int(bar_length - len(arrow)) * ' '
     sys.stdout.write(
-        f"\rsample/budget: [{''.join([arrow, padding])}] {current}/{total} ({fraction:.2%}) tau_rel_confidence: {tau_rel_confidence:.2f}, tau_confidence: {tau_confidence:.2f}, {interval_o}")
+        f"\r sample/budget: [{''.join([arrow, padding])}] {current}/{total} ({fraction:.2%}) tau_rel_confidence: {tau_rel_confidence:.2f}, tau_confidence: {tau_confidence:.2f}, skip_round: {interval_o}")
     sys.stdout.flush()
 
 
